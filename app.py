@@ -83,13 +83,19 @@ if st.button("Ask 🤔", use_container_width=True):
         prompt = f"""
 You are a Snowflake Cortex Analyst.
 
+You understand the business using this semantic model:
+- Customers place sales orders
+- SALES.CUSTOMER_ID joins to CUSTOMERS.CUSTOMER_ID
+- Measures: AMOUNT
+- Time dimension: ORDER_DATE
+
 Generate ONE valid Snowflake SELECT query.
 Do not explain.
 Do not include markdown.
 Do not include comments.
 
-Use ONLY this semantic view:
-DEMO_DB.PUBLIC.SHIVANSHI_SEMANTIC_VIEW
+Execute queries ONLY on this view:
+DEMO_DB.PUBLIC.SHIVANSHI_EXEC_VIEW
 
 Question:
 {question}
